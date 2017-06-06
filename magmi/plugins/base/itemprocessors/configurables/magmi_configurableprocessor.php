@@ -314,8 +314,10 @@ class Magmi_ConfigurableItemProcessor extends Magmi_ItemProcessor
             default:
                 break;
         }
-        // always clear current simples
-        if (count($this->_currentsimples) > 0) {
+        // clear current simples if option "keep_existing_associations" selected
+
+        if ($this->getParam("CFGR:keep_existing_associations") == 1) {
+
             unset($this->_currentsimples);
             $this->_currentsimples = array();
         }
