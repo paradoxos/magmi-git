@@ -32,6 +32,21 @@
 	</select></li>
 </ul>
 <ul class="formline">
+    <li class="label" style="width: 360px">keep existing associations</li>
+    <li class="value"><select name="CFGR:keep_existing_associations">
+            <option value="0"
+                <?php if ($this->getParam("CFGR:keep_existing_associations")==0) {
+                    ?>
+                    selected="selected" <?php
+                }?>>No</option>
+            <option value="1"
+                <?php if ($this->getParam("CFGR:keep_existing_associations")==1) {
+                    ?>
+                    selected="selected" <?php
+                }?>>Yes</option>
+        </select></li>
+</ul>
+<ul class="formline">
 	<li class="label">Force simples visibility</li>
 	<li class="value">
 <?php $v=$this->getParam("CFGR:updsimplevis", 0)?>
